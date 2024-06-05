@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: fxdeals
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "7979:8080"
+volumes:
+  mysql_data:
