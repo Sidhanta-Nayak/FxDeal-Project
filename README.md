@@ -4,7 +4,7 @@ This project is a Spring Boot application to accept and persist FX deals data.
 
 ## Requirements
 
-- Java 11
+- Java 8
 - Docker
 - Maven or Gradle
 
